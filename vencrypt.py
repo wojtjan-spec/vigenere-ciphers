@@ -15,7 +15,7 @@ def main():
     if len(sys.argv) != 4:
         print("------------------------------------------------------------------------------------------")
         print("[ERROR] Usage: python vencrypt.py input_text.txt output_cipher.txt input_key_string       ")
-        print(" Please note: the encryption works only if both the message and the key are in (ALL)CAPS. ")
+        print(" Please note: the encryption produces the cipher and the key in (ALL)CAPS.                ")
         print("------------------------------------------------------------------------------------------")
         return
 
