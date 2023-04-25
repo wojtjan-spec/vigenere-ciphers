@@ -23,8 +23,7 @@ def main():
         input_cipher = f.read()
 
     input_key_string = sys.argv[3]
-    if(input_cipher.islower()):
-        input_key_string.lower()
+    input_key_string = input_key_string.upper()
 
     key = stretch_key(input_cipher, input_key_string)
     output_original = decipher_vigenere(input_cipher, key)

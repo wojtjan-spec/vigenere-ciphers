@@ -21,10 +21,10 @@ def main():
 
     with open(sys.argv[1], 'r') as f:
         input_text = f.read()
+    input_text = input_text.upper()
 
     input_key_string = sys.argv[3]
-    if(input_text.islower()):
-        input_key_string.lower()
+    input_key_string = input_key_string.upper()
 
     key = stretch_key(input_text, input_key_string)
     output_cipher = cipher_vigenere(input_text, key)
