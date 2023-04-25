@@ -4,9 +4,11 @@ from vhelper import *
 def cipher_vigenere(input_text, key):
     cipher_text = []
     for i in range(len(input_text)):
-        a = (ord(input_text[i]) +
-             ord(key[i])) % 26
-        a += ord('A')
+        if(input_text[i] == ' '):
+             a = ord(' ')
+        else:
+            a = (ord(input_text[i]) + ord(key[i])) % 26
+            a += ord('A')
         cipher_text.append(chr(a))
     return("" . join(cipher_text))
      
