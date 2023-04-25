@@ -13,7 +13,6 @@ def cipher_vigenere(input_text, key):
     return("" . join(cipher_text))
      
 def main():
-
     if len(sys.argv) != 4:
         print("------------------------------------------------------------------------------------------")
         print("[ERROR] Usage: python vencrypt.py input_text.txt output_cipher.txt input_key_string       ")
@@ -29,7 +28,11 @@ def main():
     input_key_string = input_key_string.upper()
 
     key = stretch_key(input_text, input_key_string)
+
+    print(key)
+
     output_cipher = cipher_vigenere(input_text, key)
+    output_cipher = output_cipher.lower()
 
     with open(sys.argv[2], 'w') as f:
         f.write(output_cipher)

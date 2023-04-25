@@ -3,12 +3,12 @@
 # function
 def stretch_key(string, key):
     key = list(key)
-    if len(string) == len(key):
-        return(key)
-    else:
-        for i in range(len(string) - len(key)):
-            if (string[i] == " "):
-                key.append(" ")
-            else:
-                key.append(key[i % len(key)])
-    return("" . join(key))
+    stretched_key = []
+    i = 0
+    for char in string:
+        if char == " ":
+            stretched_key.append(" ")
+        else:
+            stretched_key.append(key[i % len(key)])
+            i += 1
+    return "" . join(stretched_key)

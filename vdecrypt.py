@@ -13,7 +13,6 @@ def decipher_vigenere(cipher_text, key):
     return("" . join(original_text))
 
 def main():
-
     if len(sys.argv) != 4:
         print("------------------------------------------------------------------------------------------")
         print("[ERROR] Usage: python vdecrypt.py input_cipher.txt output_original.txt input_key_string   ")
@@ -23,6 +22,7 @@ def main():
 
     with open(sys.argv[1], 'r') as f:
         input_cipher = f.read()
+    input_cipher = input_cipher.upper()
 
     input_key_string = sys.argv[3]
     input_key_string = input_key_string.upper()
