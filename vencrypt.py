@@ -16,20 +16,21 @@ def main():
     if len(sys.argv) != 4:
         print("------------------------------------------------------------------------------------------")
         print("[ERROR] Usage: python vencrypt.py input_text.txt output_cipher.txt input_key_string       ")
-        print(" Please note: the encryption produces the cipher and the key in (ALL)CAPS.                ")
+        print(" Please note: the encryption of cipher is done in (ALL)CAPS, then casted to lowercase.    ")
         print("------------------------------------------------------------------------------------------")
-        return
+        return -1
 
     with open(sys.argv[1], 'r') as f:
         input_text = f.read()
+    if(check_if_english(input_text) == False):
+        print("[ERROR] The message is not entirely in English.")
+        return -1
     input_text = input_text.upper()
 
     input_key_string = sys.argv[3]
     input_key_string = input_key_string.upper()
 
     key = stretch_key(input_text, input_key_string)
-
-    print(key)
 
     output_cipher = cipher_vigenere(input_text, key)
     output_cipher = output_cipher.lower()

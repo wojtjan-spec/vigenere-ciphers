@@ -16,7 +16,7 @@ def main():
     if len(sys.argv) != 4:
         print("------------------------------------------------------------------------------------------")
         print("[ERROR] Usage: python vdecrypt.py input_cipher.txt output_original.txt input_key_string   ")
-        print(" Please note: the decryption of the cipher is always in (ALL)CAPS.                        ")
+        print(" Please note: the decryption of the cipher is done in (ALL)CAPS, then casted to lowercase.")
         print("------------------------------------------------------------------------------------------")
         return
 
