@@ -68,6 +68,7 @@ def crack(input_cipher, keys, hint_word):
         cracked_text = decipher_vigenere(input_cipher, stretched_key)
 
         if check_all_words(cracked_text) == True:
+            print("key: ", keyword)
             final_texts.append(cracked_text)
 
     return final_texts
