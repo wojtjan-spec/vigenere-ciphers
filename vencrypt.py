@@ -18,13 +18,15 @@ def main():
         print("[ERROR] Usage: python vencrypt.py input_text.txt output_cipher.txt input_key_string       ")
         print(" Please note: the encryption of cipher is done in (ALL)CAPS, then casted to lowercase.    ")
         print("------------------------------------------------------------------------------------------")
-        return -1
+        return
 
     with open(sys.argv[1], 'r') as f:
         input_text = f.read()
+
     if(check_if_english(input_text) == False):
         print("[ERROR] The message is not entirely in English.")
-        return -1
+        return
+
     input_text = input_text.upper()
 
     input_key_string = sys.argv[3]

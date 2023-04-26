@@ -1,7 +1,7 @@
 from langdetect import detect
 # vhelper.py>
 
-# functions
+#functions
 def check_if_english(string):
     try:
         language = detect(string)
