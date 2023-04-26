@@ -10,7 +10,7 @@ with open("eng-words.txt") as word_file:
 
 def is_english_word(word):
     return word.lower() in english_words
- 
+
 def check_all_words(string):
     all_words = 0
     count_of_eng = 0
@@ -76,8 +76,11 @@ def main():
     if len(sys.argv) != 4:
         print("------------------------------------------------------------------------------------------")
         print("[ERROR] Usage: python vcrack.py input_cipher.txt output_cracked.txt input_hint_word       ")
-        print(" Please note: the cracking of the cipher is based on the hint word,                       ")
-        print("              that has to be present in the original message.                             ")
+        print(" Please note: 1. The cipher cracking process is based on the hint word,                   ")
+        print("                 that has to be present in the original message and at                    ")
+        print("                 least as long as the key.                                                ")
+        print("              2. The cipher is cracked based on the various key attempts and the          ")
+        print("                 amount of fitting english words (at least 80 percent of the message).    ")
         print("------------------------------------------------------------------------------------------")
         return
 
